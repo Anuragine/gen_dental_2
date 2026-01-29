@@ -1,0 +1,101 @@
+{
+  "clinic_info": {
+    "name": "Gen Dental - Advanced Dental Care",
+    "description": "Premium dental clinic providing comprehensive dental services",
+    "phone": "+91-XXXXXXXXXX",
+    "email": "info@gendental.com",
+    "address": "Your Clinic Address Here",
+    "hours": "9:00 AM - 6:00 PM",
+    "weekends": "Closed Sundays"
+  },
+  "services": {
+    "diagnosis": {
+      "name": "Diagnosis Services",
+      "items": [
+        {
+          "name": "Consultation",
+          "price": "₹300-500",
+          "description": "Professional dental consultation with experienced dentist"
+        },
+        {
+          "name": "Digital X-ray",
+          "price": "₹400-500",
+          "description": "Advanced digital radiography for accurate diagnosis"
+        },
+        {
+          "name": "IOPA Film X-ray",
+          "price": "₹300",
+          "description": "Intra-oral periapical X-ray examination"
+        }
+      ]
+    },
+    "preventive": {
+      "name": "Preventive Care",
+      "items": [
+        {
+          "name": "Scaling & Polishing",
+          "price": "₹1,000-2,000",
+          "description": "Professional teeth cleaning to remove plaque and tartar"
+        },
+        {
+          "name": "Fluoride Application",
+          "price": "₹500-1,000",
+          "description": "Protective fluoride coating for cavity prevention"
+        }
+      ]
+    },
+    "restorative": {
+      "name": "Restorative Dentistry",
+      "items": [
+        {
+          "name": "Filling (Amalgam)",
+          "price": "₹500-1,500",
+          "description": "Traditional amalgam filling for cavity restoration"
+        },
+        {
+          "name": "Filling (Composite)",
+          "price": "₹1,000-2,500",
+          "description": "Tooth-colored composite filling for natural appearance"
+        },
+        {
+          "name": "Crown",
+          "price": "₹3,000-8,000",
+          "description": "Durable crown restoration for damaged teeth"
+        }
+      ]
+    },
+    "cosmetic": {
+      "name": "Cosmetic Dentistry",
+      "items": [
+        {
+          "name": "Teeth Whitening",
+          "price": "₹2,000-5,000",
+          "description": "Professional teeth bleaching for brighter smile"
+        },
+        {
+          "name": "Veneers",
+          "price": "₹4,000-8,000",
+          "description": "Thin shells to improve tooth appearance"
+        }
+      ]
+    }
+  },
+  "faq": [
+    {
+      "question": "How often should I visit the dentist?",
+      "answer": "It is recommended to visit your dentist every 6 months for regular checkups and cleaning."
+    },
+    {
+      "question": "What should I do if I have a dental emergency?",
+      "answer": "Contact us immediately. We provide emergency dental services. You can call us or visit our clinic."
+    },
+    {
+      "question": "Do you provide painless treatments?",
+      "answer": "Yes, we use modern techniques and anesthesia to ensure painless treatments."
+    },
+    {
+      "question": "Do you accept insurance?",
+      "answer": "Yes, we accept most major dental insurance plans. Please contact us for details."
+    }
+  ]
+}

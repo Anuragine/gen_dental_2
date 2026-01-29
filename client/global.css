@@ -1,0 +1,291 @@
+/** @import must precede all other statements */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fluid typography and spacing system */
+@layer base {
+  html {
+    /* Base font size for rem calculations */
+    font-size: 16px;
+
+    /* Fluid scaling: grows proportionally with viewport */
+    @media (max-width: 640px) {
+      font-size: clamp(14px, 2.5vw, 16px);
+    }
+
+    /* Smooth font scaling between breakpoints */
+    @media (min-width: 641px) and (max-width: 1024px) {
+      font-size: clamp(15px, 1.5vw, 16px);
+    }
+
+    @media (min-width: 1025px) {
+      font-size: 16px;
+    }
+  }
+
+  /* Fluid line height for better readability */
+  body {
+    line-height: 1.6;
+  }
+}
+
+@layer base {
+  /**
+   * Tailwind CSS theme
+   * tailwind.config.ts expects the following color variables to be expressed as HSL values.
+   * A different format will require also updating the theme in tailwind.config.ts.
+  */
+  :root {
+    --background: 210 50% 98%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 100% 50%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 35 100% 50%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    /* Fluid font scaling for responsive typography */
+    @apply text-base;
+  }
+
+  @media (max-width: 640px) {
+    html {
+      @apply text-sm;
+    }
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  :where(p, span, li, h1, h2, h3, h4, h5, h6, a, button, label, td, th) {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  pre,
+  code {
+    overflow-x: auto;
+    white-space: pre;
+  }
+}
+
+@layer components {
+  /* Fluid container system - constrains content while respecting viewport padding */
+  .container {
+    @apply w-full mx-auto;
+  }
+
+  /* Ensure images don't overflow and scale proportionally */
+  img {
+    @apply max-w-full h-auto;
+  }
+
+  /* Ensure all interactive elements are appropriately sized */
+  button,
+  input,
+  textarea {
+    @apply text-base; /* Prevents zoom on mobile */
+  }
+
+  /* Smooth text rendering across zoom levels */
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+/* Chat message fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@layer utilities {
+  .animate-fadeIn {
+    animation: fadeIn 0.3s ease-out;
+  }
+}
+
+/* Typing animation for placeholder */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  0%, 49% {
+    border-right-color: #000000;
+  }
+  50%, 100% {
+    border-right-color: transparent;
+  }
+}
+
+/* Animated Send Button */
+.send-button {
+  font-family: inherit;
+  font-size: 14px;
+  background: #000000;
+  color: white;
+  padding: 0.5em 0.7em;
+  padding-left: 0.6em;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.send-button span {
+  display: block;
+  margin-left: 0.3em;
+  transition: all 0.3s ease-in-out;
+}
+
+.send-button svg {
+  display: block;
+  transform-origin: center center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.send-button:hover .svg-wrapper {
+  animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+
+.send-button:hover svg {
+  transform: translateX(1.2em) rotate(45deg) scale(1.1);
+}
+
+.send-button:hover span {
+  transform: translateX(5em);
+}
+
+.send-button:active {
+  transform: scale(0.95);
+}
+
+.send-button:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.send-button:disabled:hover .svg-wrapper {
+  animation: none;
+}
+
+.send-button:disabled:hover svg {
+  transform: none;
+}
+
+.send-button:disabled:hover span {
+  transform: none;
+}
+
+@keyframes fly-1 {
+  from {
+    transform: translateY(0.1em);
+  }
+  to {
+    transform: translateY(-0.1em);
+  }
+}
